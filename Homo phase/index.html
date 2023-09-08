@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,7 @@
             margin: 0;
             overflow: hidden;
             background-color: #000;
+            font-family: Arial, sans-serif;
         }
         #game-container {
             width: 100vw;
@@ -35,17 +35,50 @@
             color: white;
             font-size: 24px;
         }
+        #quantity-display {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 18px;
+        }
+        .vertical-block {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 16.67%; /* 1/6 of the page width */
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .vertical-block img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+        .vertical-block p {
+            color: white;
+            font-size: 16px;
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
     <div id="game-container">
         <img id="player" src="rocket.gif" alt="Player">
         <div id="score">Score: 0</div>
+        <div id="quantity-display" class="vertical-block">
+            <!-- Collectible quantity display will be added here dynamically -->
+        </div>
     </div>
     <script>
         const player = document.getElementById('player');
         const gameContainer = document.getElementById('game-container');
         const scoreDisplay = document.getElementById('score');
+        const quantityDisplay = document.getElementById('quantity-display');
         let tilt = '';
         let playerX = window.innerWidth / 2 - player.clientWidth / 2;
         let playerY = window.innerHeight / 2 - player.clientHeight / 2;
@@ -53,15 +86,18 @@
         let score = 0;
         let collectibleIndex = 0;
         const collectibles = [
-            'bg1.png',
-            'bg2.png',
-            'bg3.png',
-            'bg4.png',
-            'bg5.png',
-            'bg6.png',
-            'bg7.png',
-            'bg8.png'
+            'bg1.gif',
+            'bg2.gif',
+            'bg3.gif',
+            'bg4.gif',
+            'bg5.gif',
+            'bg6.gif',
+            'bg7.gif',
+            'bg8.gif',
+            
         ];
+
+        const collectibleQuantities = {}; // Store quantities of each collectible
 
         // Function to move and tilt the player
         function movePlayer(event) {
@@ -113,11 +149,41 @@
                     playerRect.bottom > collectibleRect.top
                 ) {
                     // Collision detected
+                    const collectibleSrc = collectible.getAttribute('src');
                     collectible.remove();
                     score += 5;
                     scoreDisplay.textContent = `Score: ${score}`;
+                    
+                    // Increase the quantity of the collected collectible
+                    if (collectibleSrc in collectibleQuantities) {
+                        collectibleQuantities[collectibleSrc]++;
+                    } else {
+                        collectibleQuantities[collectibleSrc] = 1;
+                    }
+
+                    // Update the quantity display
+                    updateQuantityDisplay();
                 }
             });
+        }
+
+        // Function to update the quantity display
+        function updateQuantityDisplay() {
+            quantityDisplay.innerHTML = '';
+
+            for (const collectibleSrc in collectibleQuantities) {
+                if (collectibleQuantities.hasOwnProperty(collectibleSrc)) {
+                    const quantity = collectibleQuantities[collectibleSrc];
+
+                    const collectibleImg = document.createElement('img');
+                    collectibleImg.src = collectibleSrc;
+                    quantityDisplay.appendChild(collectibleImg);
+
+                    const quantityText = document.createElement('p');
+                    quantityText.textContent = `x${quantity}`;
+                    quantityDisplay.appendChild(quantityText);
+                }
+            }
         }
 
         // Function to generate and display collectibles one by one
@@ -138,7 +204,7 @@
         window.addEventListener('keydown', movePlayer);
 
         // Generate collectibles one by one
-        setInterval(generateNextCollectible, 3000); // 3 seconds
+        setInterval(generateNextCollectible, 3000); // 4 seconds
     </script>
 </body>
 </html>
