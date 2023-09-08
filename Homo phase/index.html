@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        #player {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            transition: transform 0.2s;
+        }
+        .collectible {
+            position: absolute;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <img id="player" src="rocket.gif" alt="Player">
+        <div id="score">Score: 0</div>
+    </div>
+    <script>
+        const player = document.getElementById('player');
+        const gameContainer = document.getElementById('game-container');
+        const scoreDisplay = document.getElementById('score');
+        let tilt = '';
+        let playerX = window.innerWidth / 2 - player.clientWidth / 2;
+        let playerY = window.innerHeight / 2 - player.clientHeight / 2;
+        const step = 10;
+        let score = 0;
+        let collectibleIndex = 0;
+        const collectibles = [
+            'bg1.png',
+            'bg2.png',
+            'bg3.png',
+            'bg4.png',
+            'bg5.png',
+            'bg6.png',
+            'bg7.png',
+            'bg8.png'
+        ];
+
+        // Function to move and tilt the player
+        function movePlayer(event) {
+            switch (event.key) {
+                case 'a':
+                    if (playerX - step >= 0) {
+                        playerX -= step;
+                        tilt = 'rotate(-30deg)';
+                    }
+                    break;
+                case 's':
+                    if (playerY + step <= window.innerHeight - player.clientHeight) {
+                        playerY += step;
+                        tilt = 'rotate(180deg)';
+                    }
+                    break;
+                case 'd':
+                    if (playerX + step <= window.innerWidth - player.clientWidth) {
+                        playerX += step;
+                        tilt = 'rotate(30deg)';
+                    }
+                    break;
+                case 'w':
+                    if (playerY - step >= 0) {
+                        playerY -= step;
+                        tilt = 'rotate(0deg)';
+                    }
+                    break;
+            }
+
+            player.style.transform = `translate(${playerX}px, ${playerY}px) ${tilt}`;
+
+            // Check for collision with collectibles
+            checkCollision();
+        }
+
+        // Function to check collision with collectibles
+        function checkCollision() {
+            const playerRect = player.getBoundingClientRect();
+            const collectiblesList = document.querySelectorAll('.collectible');
+
+            collectiblesList.forEach(collectible => {
+                const collectibleRect = collectible.getBoundingClientRect();
+
+                if (
+                    playerRect.left < collectibleRect.right &&
+                    playerRect.right > collectibleRect.left &&
+                    playerRect.top < collectibleRect.bottom &&
+                    playerRect.bottom > collectibleRect.top
+                ) {
+                    // Collision detected
+                    collectible.remove();
+                    score += 5;
+                    scoreDisplay.textContent = `Score: ${score}`;
+                }
+            });
+        }
+
+        // Function to generate and display collectibles one by one
+        function generateNextCollectible() {
+            if (collectibleIndex < collectibles.length) {
+                const collectible = document.createElement('img');
+                collectible.classList.add('collectible');
+                collectible.src = collectibles[collectibleIndex];
+                collectible.style.left = Math.random() * (window.innerWidth - 50) + 'px';
+                collectible.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+                gameContainer.appendChild(collectible);
+
+                collectibleIndex++;
+            }
+        }
+
+        // Event listener for key presses
+        window.addEventListener('keydown', movePlayer);
+
+        // Generate collectibles one by one
+        setInterval(generateNextCollectible, 3000); // 3 seconds
+    </script>
+</body>
+</html>
