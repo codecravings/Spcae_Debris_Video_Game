@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --orange:#000000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+*::selection{
+    background:var(--orange);
+    color:#fff;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+section{
+    padding: 2rem 9%;
+}
+.heading{
+    text-align: center;
+    padding: 2.5rem 0;
+}
+.heading span{
+    font-size: 3.5rem;
+    background: rgba(255,165,0,.2);
+    color: var(--orange);
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+}
+.heading span.space{
+    background: none;
+}
+.plus-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plus {
+            font-size: 2rem;
+            color: var(--orange);
+        }
+
+        .box-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .box {
+            flex: 1 1 calc(33.33% - 1rem);
+            border-radius: .5rem;
+            overflow: hidden;
+            box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+        }
+.plus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--orange);
+            
+        }
+
+
+.packages .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.packages .box-container .box{
+    flex: 1 1 calc(25% - 1rem); 
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    flex: 0 0 calc(33.33% - 2rem);
+    
+    }
+
+    
+
+
+
+.packages .box-container .box img{
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+}
+.packages .box-container .box .content{
+    padding: 2rem;
+}
+.packages .box-container .box .content h3{
+    font-size: 2rem;
+    color: #333;
+}
+
+.packages .box-container .box .content h3 i{
+    color: var(--orange);
+}
+.packages .box-container .box .content h3 p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+.packages .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--orange);
+}
+.packages .box-container .box .content .price{
+    font-size: 2rem;
+    color: #333;
+    padding: 1rem;
+}
+.packages .box-container .box .content .price span {
+    color: #666;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+.packages .box-container .box img{
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+}
+.packages .box-container .box .content{
+    padding: 2rem;
+}
+.packages .box-container .box .content h3{
+    font-size: 2rem;
+    color: #333;
+}
+
+.packages .box-container .box .content h3 i{
+    color: var(--orange);
+}
+.packages .box-container .box .content h3 p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+.packages .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--orange);
+}
+.packages .box-container .box .content .price{
+    font-size: 2rem;
+    color: #333;
+    padding: 1rem;
+}
+.packages .box-container .box .content .price span {
+    color: #666;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+</style>
+</head>
+<body>
+<section class="packages" id="packages">
+    <h1 class="heading">
+        <span>d</span>
+        <span>e</span>
+        <span>b</span>
+        <span>r</span>
+        <span>i</span>
+        <span>s</span>
+        
+    </h1> 
+    <div class="box-container">
+      <div class="box-row">
+        <div class="box">
+            <img src="images/gateway1.jpg" alt="">
+            <div class="content">
+                <h3>Defunt Satellite</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+               
+                
+            </div>
+        </div>
+        <div class="plus">+</div>
+        <div class="box">
+            <img src="images/Anjaneri1.jpg" alt="">
+            <div class="content">
+                <h3>Rocket Stages</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+               
+            </div>
+        </div>
+        <div class="plus">=</div>
+        <div class="box">
+            <img src="images/monu1.jpg" alt="">
+            <div class="content">
+                <h3>Cube Satellite</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+               
+            </div>
+        </div>
+        <div class="box-row">
+          <div class="box">
+              <img src="images/gateway1.jpg" alt="">
+              <div class="content">
+                  <h3>Titanium Alloy</h3>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                 
+                  
+              </div>
+          </div>
+          <div class="plus">+</div>
+          <div class="box">
+              <img src="images/Anjaneri1.jpg" alt="">
+              <div class="content">
+                  <h3>Aluminium</h3>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                 
+              </div>
+          </div>
+          <div class="plus">=</div>
+          <div class="box">
+              <img src="images/monu1.jpg" alt="">
+              <div class="content">
+                  <h3>Armor</h3>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                 
+              </div>
+          </div>    
+          <div class="box-row">
+            <div class="box">
+                <img src="images/gateway1.jpg" alt="">
+                <div class="content">
+                    <h3>Solar Panel</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                   
+                    
+                </div>
+            </div>
+            <div class="plus">+</div>
+            <div class="box">
+                <img src="images/Anjaneri1.jpg" alt="">
+                <div class="content">
+                    <h3>Thruster</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                   
+                </div>
+            </div>
+            <div class="plus">=</div>
+            <div class="box">
+                <img src="images/monu1.jpg" alt="">
+                <div class="content">
+                    <h3>Landing Rover</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                   
+                </div>
+            </div>
+            <div class="box-row">
+              <div class="box">
+                  <img src="images/gateway1.jpg" alt="">
+                  <div class="content">
+                      <h3>Raentry Capsules</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                     
+                      
+                  </div>
+              </div>
+              <div class="plus">+</div>
+              <div class="box">
+                  <img src="images/Anjaneri1.jpg" alt="">
+                  <div class="content">
+                      <h3>Batteries </h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                     
+                  </div>
+              </div>
+              <div class="plus">=</div>
+              <div class="box">
+                  <img src="images/monu1.jpg" alt="">
+                  <div class="content">
+                      <h3>Space Artifacts</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptatem voluptas blanditiis accusamus.</p>
+                     
+                  </div>
+              </div>        
+        
+       
+        
+      
+    
+        
+    </div>    
+</section>
+
+
+
+
+
+
+
+
+
+<script>
+let searchBtn = document.querySelector('#search-btn');
+let searchBar = document.querySelector('.search-bar-container');
+let formBtn = document.querySelector('#login-btn');
+let loginForm = document.querySelector('.login-form-container');
+let formClose= document.querySelector('#form-close');
+let menu=document.querySelector('#menu-bar');
+let navbar=document.querySelector('.navbar');
+let videoBtn=document.querySelectorAll('.vid-btn');
+
+window.onscroll= () =>{
+    searchBtn.classList.remove('fa-times');
+    searchBar.classList.remove('active');
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+    loginForm.classList.remove('active');
+}
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+                  
+});
+searchBtn.addEventListener('click', () =>{
+    searchBtn.classList.toggle('fa-times');
+    searchBar.classList.toggle('active');
+                  
+});
+formBtn.addEventListener('click', () =>{
+    loginForm.classList.add('active');
+                  
+});
+formClose.addEventListener('click', () =>{
+    loginForm.classList.remove('active');
+                  
+});
+
+
+</script>
+    
+</body>
+</html>
