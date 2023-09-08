@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(sp.avif);
+}
+
+section{
+  position: relative;  
+  height: 450px;
+  width: 1075px;
+  display: flex;
+  align-items: center;
+}
+
+.swiper{
+  width: 950px;
+}
+
+.card{
+  position: relative;
+  background:lightgrey;
+  border-radius: 20px;
+  height: 600px;
+ 
+  margin: 20px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card::before{
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.card .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+section .card .image{
+  height: 160px;
+  width: 160px;
+  border-radius: 20%;
+  padding: 3px;
+  background: white;
+  margin-top: 30px;
+}
+
+section .card .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20%;
+  border: 3px solid #fff;
+}
+
+.card .media-icons{
+  position: absolute;
+  top: 12px;
+  right: 95px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card .media-icons i{
+  color: #7d2ae8;
+  opacity: 0.6;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.card .media-icons i:hover{
+  opacity: 1;
+}
+
+.card .name-profession{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  color: black;
+} 
+
+.name-profession .name{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.name-profession .profession{
+  font-size:15px;
+  font-weight: 500;
+}
+
+.card .rating{
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.card .rating i{
+  font-size: 18px;
+  margin: 0 2px;
+  color: #7d2ae8;
+}
+
+.card .button{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card .button button{
+  background: #7d2ae8;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button button:hover{
+  background: #6616d0;
+}
+
+.swiper-pagination{
+  position: absolute;
+  top: 450px;
+}
+
+.swiper-pagination-bullet{
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: white;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  opacity: 0.7;
+  color: white;
+  transition: all 0.3s ease;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  opacity: 1;
+  color: white;
+}
+    </style>
+</head>
+<body>
+
+  <section>
+    
+    <div class="swiper mySwiper container">
+      <div class="swiper-wrapper content">
+
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="sp1.avif" alt="">
+            </div>
+
+            <div class="media-icons">
+             
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Solar Panel</span>
+              <span class="profession">A solar panel is a device that converts sunlight into electricity by using photovoltaic (PV) cells. The electrons flow through a circuit and produce direct current (DC) electricity, which can be used to power various devices or be stored in batteries. Solar panels are also known as solar cell panels, solar electric panels, or PV modules.</span>
+            </div>
+
+            <div class="rating">
+              
+            </div>
+
+            <div class="button">
+             
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="ds.jpeg" alt="">
+            </div>
+
+            <div class="media-icons">
+              
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Defunt Satellite</span>
+              <span class="profession"> For the closer satellites, engineers will use its last bit of fuel to slow it down so it will fall out of orbit and burn up in the atmosphere. Further satellites are instead sent even farther away from Earth.</span>
+            </div>
+
+            <div class="rating">
+              
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="honeycomb.jpeg">
+            </div>
+
+            <div class="media-icons">
+            
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Aluminium Honey Comb</span>
+              <span class="profession">As core material, aluminium honeycomb is used in sandwich panels and it is utilised in: floors, roofs, doors, partitions, facades, working surfaces for automatic machines, laser jet cutting and for all products which require an optimal stiffness-to-weight-ratio.</span>
+            </div>
+
+            <div class="rating">
+             
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="thruster.jpeg" alt="">
+            </div>
+
+            <div class="media-icons">
+              
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Thruster</span>
+              <span class="profession">A thruster is a propulsive device used by spacecraft and watercraft for station keeping, attitude control, in the reaction control system, or long-duration, low-thrust acceleration.Recent tests demonstrated that the X3 thruster can operate at over 100kW of power, generating 5.4 Newtons of thrust — the highest of any ionic plasma thruster to date. It also broke records for maximum power output and operating current</span>
+            </div>
+
+            <div class="rating">
+             
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="battery.jpeg">
+            </div>
+
+            <div class="media-icons">
+              
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Batteries</span>
+              <span class="profession">A battery is a source of electric power consisting of one or more electrochemical cells with external connections[1] for powering electrical devices. When a battery is supplying power, its positive terminal is the cathode and its negative terminal is the anode.[2] The terminal marked negative is the source of electrons that will flow through an external electric circuit to the positive terminal. </span>
+            </div>
+
+            <div class="rating">
+              
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="rocket.jpeg">
+            </div>
+
+            <div class="media-icons">
+              
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Rocket Stages</span>
+              <span class="profession">Rockets stages are typically stacked or parallel (boosters on the sides of a central vessel). The two-stage rocket is common, but space programs have successfully launched rockets with as many as five separate stages.The three-stage-to-orbit launch system is a commonly used rocket system to attain Earth orbit.</span>
+            </div>
+
+            <div class="rating">
+             
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="reentry.jpeg">
+            </div>
+
+            <div class="media-icons">
+             
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Reentry Capsules</span>
+              <span class="profession">A reentry capsule is the portion of a space capsule which returns to Earth following a spaceflight. The shape is determined partly by aerodynamics; a capsule is aerodynamically stable falling blunt end first, which allows only the blunt end to require a heat shield for atmospheric entry. A crewed capsule contains the spacecraft's instrument panel, limited storage space, and seats for crew members. Because a capsule shape has little aerodynamic lift, the final descent is via parachute, either coming to rest on land, at sea, or by active capture by an aircraft. In contrast, the development of spaceplane reentry vehicles attempts to provide a more flexible reentry profile</span>
+            </div>
+
+            <div class="rating">
+              
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="payload.jpeg" alt="">
+            </div>
+
+            <div class="media-icons">
+             
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Payload Fairing</span>
+              <span class="profession">A payload fairing is a nose cone used to protect a spacecraft payload against the impact of dynamic pressure and aerodynamic heating during launch through an atmosphere. An additional function on some flights is to maintain the cleanroom environment for precision instruments.[1] Once outside the atmosphere the fairing is jettisoned, exposing the payload to outer space.</span>
+            </div>
+
+            <div class="rating">
+              
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+              <img src="antenna.jpeg">
+            </div>
+
+            <div class="media-icons">
+              
+            </div>
+
+            <div class="name-profession">
+              <span class="name">Space Antenna</span>
+              <span class="profession">The Laser Interferometer Space Antenna (LISA) is a proposed space probe to detect and accurately measure gravitational waves[2]—tiny ripples in the fabric of spacetime—from astronomical sources.[3] LISA would be the first dedicated space-based gravitational-wave observatory. It aims to measure gravitational waves directly by using laser interferometry. The LISA concept has a constellation of three spacecraft arranged in an equilateral triangle with sides 2.5 million kilometres long, flying along an Earth-like heliocentric orbit</span>
+            </div>
+
+            <div class="rating">
+              
+            </div>
+
+            <div class="button">
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+  </section>
+
+  <!-- Swiper JS -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  </script>
+
+</body>
+</html>
